@@ -12,7 +12,6 @@ enum34==1.1.6
 Flask==0.12.2
 Flask-Compress==1.4.0
 Flask-SeaSurf==0.2.2
-functools32==3.2.3.post2
 idna==2.7
 ipython-genutils==0.2.0
 itsdangerous==0.24
