@@ -32,7 +32,7 @@ app.layout = html.Div([
                    step=6,
                    marks={i: '{} Mois'.format(i) for i in range(6,37,6)},
                    value=18),
-        html.Button(id = 'button_login', children = 'Login', n_clicks=0),
+        html.Button(id = 'button_login', children = 'Login'),
 #        html.Div(id = 'div1', children=),
         html.Div(id = 'out')
         ])
