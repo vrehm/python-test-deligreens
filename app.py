@@ -20,8 +20,30 @@ server.secret_key = os.environ.get('secret_key', str(randint(0, 1000000)))
 app = dash.Dash(__name__, server=server)
 
 
-# Put your Dash code here
+########### APP ###############
+app = dash.Dash()
 
+app.layout = html.Div([
+        html.H1(children = 'Mot de passe :'),
+        dcc.Input(id = 'input_X', type = 'number'),
+        dcc.Slider(id = 'slider',
+                   min=6,
+                   max=36,
+                   step=6,
+                   marks={i: '{} Mois'.format(i) for i in range(6,37,6)},
+                   value=18),
+        html.Button(id = 'button_login', children = 'Login'),
+#        html.Div(id = 'div1', children=),
+        html.Div(id = 'out')
+        ])
+
+@app.callback(
+        Output('out','children'),
+        [Input('button_login', 'n_clicks')],
+        [State('input_X', 'value')])
+def outoutoutotut(n_clicks, password):
+    res = html.H1(children = 'fghjk')
+    return res
 
 # Run the Dash app
 if __name__ == '__main__':
