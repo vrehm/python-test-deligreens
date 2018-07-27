@@ -1,10 +1,20 @@
 import dash
+import dash_auth
 import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
 import plotly.graph_objs as go
 
-app = dash.Dash()
+# Keep this out of source code repository - save in a file or a database
+VALID_USERNAME_PASSWORD_PAIRS = [
+    [os.environ.get('secret_key'), os.environ.get('secret_key')]
+]
+
+app = dash.Dash('auth')
+auth = dash_auth.BasicAuth(
+    app,
+    VALID_USERNAME_PASSWORD_PAIRS
+)
 server = app.server
 
 df = pd.read_csv(
@@ -44,4 +54,4 @@ app.layout = html.Div([
 ])
 
 if __name__ == '__main__':
-    app.run_server()
+    app.run_server(debug=True)
