@@ -33,15 +33,6 @@ app.layout = html.Div([
         html.Div(id = 'out')
         ])
 
-@app.callback(
-        # Output('out','children'),
-        # [Input('button_login', 'n_clicks')],
-        # [State('input_X', 'value')]
-        )
-def outoutoutotut(n_clicks, password):
-    res = html.H1(children = 'fghjk')
-    return res
-
 # Run the Dash app
 if __name__ == '__main__':
     app.server.run(debug=True, threaded=True)
