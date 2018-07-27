@@ -1,3 +1,4 @@
+import gunicorn
 import os
 import dash
 import dash_auth
